@@ -1,4 +1,4 @@
-calc_all_lscps <- function(kr_data, grid_weights){
+calc_all_lscps <- function(kr_data, grid_weights, file = NULL){
   
   if (!inherits(kr_data, "kriged_surfaces")){
     stop("'kr_data' must be a kriged_surfaces object, the output of a call to krige_surf().", call. = FALSE)
@@ -30,20 +30,20 @@ calc_all_lscps <- function(kr_data, grid_weights){
   
   class(all_lscps) <- "all_lscps"
   
-  # if (length(file) > 0) {
-  #   if (length(file) != 1 || !is.character(file)) {
-  #     warning("'file' must be a string containing the file path for the file to be saved. No file will be saved.", call. = FALSE)
-  #   }
-  #   else if (endsWith(tolower(file), ".rds")) {
-  #     saveRDS(all_lscps, file = file)
-  #   }
-  #   else if (endsWith(tolower(file), "rdata")) {
-  #     save(all_lscps, file = file)
-  #   }
-  #   else {
-  #     warning("'file' must have an .rds or .rdata file extension. No file will be saved.", call. = FALSE)
-  #   }
-  # }
+  if (length(file) > 0) {
+    if (length(file) != 1 || !is.character(file)) {
+      warning("'file' must be a string containing the file path for the file to be saved. No file will be saved.", call. = FALSE)
+    }
+    else if (endsWith(tolower(file), ".rds")) {
+      saveRDS(all_lscps, file = file)
+    }
+    else if (endsWith(tolower(file), "rdata")) {
+      save(all_lscps, file = file)
+    }
+    else {
+      warning("'file' must have an .rds or .rdata file extension. No file will be saved.", call. = FALSE)
+    }
+  }
   
   return(all_lscps)
 }

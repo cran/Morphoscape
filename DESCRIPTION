@@ -1,9 +1,9 @@
 Package: Morphoscape
 Type: Package
 Title: Computation and Visualization of Adaptive Landscapes
-Version: 1.0.0
+Version: 1.0.2
 Authors@R: c(
-  person("Blake", "Dickson", email = "blake.dickson@duke.edu",
+  person("Blake", "Dickson", email = "b.dickson@unsw.edu.au",
          role = c("aut", "cre"),
          comment = c(ORCID="0000-0001-6299-5224")),
   person("Stephanie", "Pierce", email = "spierce@oeb.harvard.edu",
@@ -17,17 +17,18 @@ Description: Implements adaptive landscape methods first described by Polly et a
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
-Depends: R (>= 4.0.0)
-Imports: concaveman, ggplot2, sp, automap
-Suggests: alphahull, knitr, rmarkdown
+Depends: R (>= 4.2.0)
+Imports: concaveman, ggplot2, spatial, sp, automap, scales,
+        viridisLite, alphahull
+Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 URL: https://blakedickson.github.io/Morphoscape/
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2022-06-15 18:15:00 UTC; Blake Dickson
+Packaged: 2023-05-12 01:24:39 UTC; z3291260
 Author: Blake Dickson [aut, cre] (<https://orcid.org/0000-0001-6299-5224>),
   Stephanie Pierce [aut] (<https://orcid.org/0000-0003-0717-1841>),
   Noah Greifer [aut] (<https://orcid.org/0000-0003-3067-7154>)
-Maintainer: Blake Dickson <blake.dickson@duke.edu>
+Maintainer: Blake Dickson <b.dickson@unsw.edu.au>
 Repository: CRAN
-Date/Publication: 2022-06-17 07:00:07 UTC
+Date/Publication: 2023-05-18 09:20:06 UTC

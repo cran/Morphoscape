@@ -33,14 +33,14 @@ str(warps_fnc)
 
 ## -----------------------------------------------------------------------------
 # Create alpha-hulled grid for kriging
-grid <- resample_grid(warps, hull = TRUE, alpha = 3, plot = TRUE)
+grid <- resample_grid(warps, hull = "concaveman", alpha = 3, plot = TRUE)
 kr_surf <- krige_surf(warps_fnc, grid = grid)
 kr_surf
 plot(kr_surf)
 
 ## -----------------------------------------------------------------------------
-# Create grid for kriging
-grid <- resample_grid(warps, hull = FALSE, padding = 1.1)
+# Create alpha-hulled grid for kriging
+grid <- resample_grid(warps, hull = NULL, padding = 1.1)
 
 # Do the kriging on the grid
 kr_surf <- krige_surf(warps_fnc, grid = grid)
@@ -55,7 +55,7 @@ plot(kr_surf)
 
 ## -----------------------------------------------------------------------------
 # Above steps all in one:
-kr_surf <- krige_surf(warps_fnc, hull = FALSE, padding = 1.1,
+kr_surf <- krige_surf(warps_fnc, hull = NULL, padding = 1.1,
                       new_data = turtles)
 kr_surf
 plot(kr_surf)
